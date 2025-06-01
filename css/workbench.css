@@ -1,0 +1,240 @@
+
+
+/**
+ Workbench Window
+ */
+
+.wbWindow {
+    position: absolute;
+    border: 1px solid #000;
+    background-color: #DDDDDD;
+    overflow: hidden;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 10%);
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    border-right: 1px solid #868686;
+    border-bottom: 1px solid #868686;
+    border-radius: 5px;
+}
+
+
+.wbWindow>.wbStatusBar {
+    position: absolute;
+    height: 30px;
+    right: 2px;
+    left: 1px;
+    top: 1px;
+    background-color: #BDBDBD;
+    background: linear-gradient(90deg, #777777 0%, #BDBDBD 100%);
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+
+    user-select: none;
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.wbWindow>.wbStatusBar>label {
+    position: relative;
+    top: 8px;
+    left: 5px;
+    text-shadow: 1px 1px #000;
+}
+
+.wbWindow.active>.wbStatusBar {
+    background-color: #777777;
+    background:linear-gradient(90deg, #3C9F7E 0%, #A3CA74 100%);
+}
+
+.wbWindow.active>.wbStatusBar label {
+    font-weight: bold;
+}
+
+
+.wbWindow>.wbArea {
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+
+.wbWindow>.wbDrag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 16px;
+    width: 16px;
+    background-image: url(/img/drag_wnd.svg);
+    background-size: 16px 16px;
+    user-select: none;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.wbWindow>.wbStatusBar>.wbBtn {
+    float: right;
+    position: relative;
+    border-top: 1px solid #EDEDED;
+    border-left: 1px solid #EDEDED;
+    border-right: 1px solid #868686;
+    border-bottom: 1px solid #868686;
+    background-color: #DDDDDD;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin-top: 4px;
+    margin-right: 5px;
+    color: #000;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.wbWindow>.wbStatusBar>.wbBtn:active {
+    border-top: 1px solid #868686;
+    border-left: 1px solid #868686;
+    border-right: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    background-color: #CCCCCC;
+}
+
+.wbSkeleton {
+    display: none;
+}
+
+.wbBtnClose::before {
+    content: "";
+    background-image: url(/img/icon_close.svg);
+    background-size: 20px 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.wbBtnMin::before {
+    content: "";
+    background-image: url(/img/icon_min.svg);
+    background-size: 20px 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.wbBtnMax::before {
+    content: "";
+    background-image: url(/img/icon_max.svg);
+    background-size: 20px 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.wbTitleText{
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.wbWindow > .wbStatusBar > .wbBtn.disabled::before {
+    opacity:0.25;
+}
+
+.wbWindow.maximized>.wbStatusBar>.wbBtnMax {
+    background-image: url(/img/icon_restore.svg);
+    background-size: 20px 20px;
+}
+
+/**
+* Workbench Table
+*/
+
+.wbTableWrapper{
+
+    padding:0;
+    margin:0;
+    position:absolute;
+    overflow: auto;
+    left:2px;
+    top:3px;
+    right:3px;
+    bottom:3px;
+    background-color: rgba(70, 73, 79, 0.8);
+}
+
+table.wbTable {
+    text-align: left;
+    position: relative;
+    border-collapse: collapse;
+    font-size:14px;
+    background-color:#FFF;
+    color:#000;
+}
+
+table.wbTable a{
+    color:#000;
+}
+
+.wbTable th {
+    position: sticky;
+    top: 0;
+    padding:0;
+    margin:0;
+}
+
+.wbTable thead th div{
+    text-align: center;
+    height: 20px;
+    margin: 0;
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    border-right: 1px solid #868686;
+    border-bottom: 1px solid #868686;
+    background-color:#DDD;
+    color:#000;
+    text-overflow: clip;
+    overflow: hidden;
+    font-weight: normal;
+    padding: 5px 0 0;
+}
+
+.wbTable tbody td{
+    border-bottom:1px solid #CCC;
+    height:30px;
+}
+
+.wbTable tbody tr:nth-child(2n+1) td{
+    background-color:#EEE;
+}
+
+.wbTable th div{
+    cursor: pointer;
+}
+
+.wbTable th div.ordered{
+    text-decoration:underline;
+
+}
+
+.wbTable th div.ordered::after{
+    content: " ↓";
+}
+
+.wbTable th div.ordered.asc::after{
+    content: " ↑";
+}
