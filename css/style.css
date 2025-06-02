@@ -439,14 +439,16 @@ div.select:after{
 
 .os-inercia {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: auto auto;
 	gap: 10px;
-	padding: 10px;
 }
 
 .os-body {
-	grid-column: 1 / span 2 ;
+	grid-column: 1 / span 2;
 	text-align: center;
+	font-size: 1.3em;
+	color: #fff;
+	text-transform: uppercase;
 	padding-top: 15px;
 }
 
@@ -456,6 +458,7 @@ div.select:after{
 
 .os-role {
 	text-align: left;
+	padding: 0 15px 0 15px;
 }
 
 .eventsHeader {
