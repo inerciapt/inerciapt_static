@@ -204,14 +204,15 @@ a:hover{
     position: absolute;
     right: 0px;
     text-align: right;
-    padding: 0em 1em 0em 0em ;
+    padding: 0em 1em 0em 0em;
 }
 
 .newsBody{
     column-count:1;
     column-gap:2em;
     line-height:1.7em;
-    word-wrap: break-word
+    word-wrap: break-word;
+	text-align: justify;
 }
 
 
@@ -498,6 +499,13 @@ div.select:after{
 .pastEditions > div img{
 	border-radius: 0.7em;
 	width: 100%;
+}
+
+.poster {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
 }
 
 @media only screen and (max-width: 1000px) {
